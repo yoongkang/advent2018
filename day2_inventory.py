@@ -22,8 +22,8 @@ def inventory(data):
 
 def inventory_functional(data):
     counters = [Counter(x) for x in data]
-    two_count = sum(map(lambda x: 1 if any(c == 2 for c in x.values()) else 0, counters))
-    three_count = sum(map(lambda x: 1 if any(c == 3 for c in x.values()) else 0, counters))
+    two_count = sum(1 if any(c == 2 for c in x.values()) else 0 for x in counters)
+    three_count = sum(1 if any(c == 3 for c in x.values()) else 0 for x in counters)
     return two_count * three_count
 
 
