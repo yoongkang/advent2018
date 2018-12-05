@@ -23,5 +23,5 @@ def inventory(data):
 if __name__ == '__main__':
     with open('./data/day2.txt') as f:
         data = f.readlines()
-    # print(inventory(data))
+    print(inventory(data))
     print(inventory2(data))
