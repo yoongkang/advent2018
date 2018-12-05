@@ -20,8 +20,16 @@ def inventory(data):
     return count2 * count3
 
 
+def inventory_functional(data):
+    counters = [Counter(x) for x in data]
+    two_count = sum(map(lambda x: 1 if any(c == 2 for c in x.values()) else 0, counters))
+    three_count = sum(map(lambda x: 1 if any(c == 3 for c in x.values()) else 0, counters))
+    return two_count * three_count
+
+
 if __name__ == '__main__':
     with open('./data/day2.txt') as f:
         data = f.readlines()
     print(inventory(data))
+    print(inventory_functional(data))
     print(inventory2(data))
